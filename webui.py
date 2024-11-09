@@ -8,7 +8,7 @@ def index():
     if request.method == "POST":
         content = request.form["input"]
         output = belarusian2latin.latinize(content)
-        return render_template("index.html", output=output)
+        return render_template("index.html", user_input=content, output=output)
     return render_template("index.html")
 
 if __name__ == "__main__":
