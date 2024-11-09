@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Belarusian2Latin</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Belarusian2Latin</h1>
+		<h2>Convert Belarusan cyrillic text to latin</h2>
+		<div class="textarea-container">
+			<div class="form-container">
+				<form id="form" method="post" action="/">
+					<textarea id="input" name="input" placeholder="Type cyrillic text here..."></textarea>
+				</form>
+			</div>
+			<div class="result-container">
+				<textarea id="output" name="output" readonly>{{ output }}</textarea>
+			</div>
+		</div>
+		<button type="submit" form="form">Convert</button>
+	</div>
+</body>
+</html>

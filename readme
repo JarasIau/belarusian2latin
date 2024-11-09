@@ -1,1 +1,4 @@
+belarusian2latin-cli.py - a CLI wrapper for the original script
+webui.py - WebUI wrapper for the original script
+
 Alphabet used: AaBbCcĆćČčDdEeFfGgHhIiJjKkLlĹĺMmNnŃńOoPpRrSsŚśŠšTtUuŬŭVvYyZzŽžŹź
