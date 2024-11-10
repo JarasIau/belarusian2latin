@@ -21,7 +21,9 @@
 				<textarea id="output" name="output" readonly>{{ output }}</textarea>
 			</div>
 		</div>
-		<button type="submit" form="form">Convert</button>
+		<noscript>
+			<button type="submit" form="form">Convert</button>
+		</noscript>
 	</div>
 	<script src="{{ url_for('static', filename='js/display.js') }}"></script>
 </body>
