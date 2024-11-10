@@ -7,7 +7,7 @@ WORKDIR /app
 COPY requirements .
 RUN pip install -r requirements
 
-COPY . .
+COPY belarusian2latin/ .
 
 ENV FLASK_APP=webui
 ENV PYTHONDONTWRITEBYTECODE 1
