@@ -63,15 +63,15 @@ button:hover {
 	max-height: 500px;
 	overflow-y: auto;
 	resize: auto;
-	padding: 12px;			
-	font-size: 16px;			 
-	font-family: 'Arial', sans-serif;  
-	line-height: 1.5;			
-	border: 2px solid #ddd;	  
-	border-radius: 8px;		  
-	box-sizing: border-box;	  
+	padding: 12px;
+	font-size: 16px;
+	font-family: 'Arial', sans-serif;
+	line-height: 1.5;
+	border: 2px solid #ddd;
+	border-radius: 8px;
+	box-sizing: border-box;
 	background-color: #f7f7f7;
-	color: #333;				 
+	color: #333;
 	transition: all 0.3s ease;
 }
 
@@ -81,12 +81,28 @@ button:hover {
 }
 
 #input:focus {
-	outline: none;			
-	border-color: #6a9dff;	
-	box-shadow: 0 0 8px rgba(106, 157, 255, 0.5); 
-	background-color: #fff;	  
+	outline: none;
+	border-color: #6a9dff;
+	box-shadow: 0 0 8px rgba(106, 157, 255, 0.5);
+	background-color: #fff;
 }
 
 h2 {
 	opacity: 0.7;
+}
+
+@media only screen and (max-width: 725px) {
+	.container {
+		flex-direction: column;
+		max-height: none;
+	}
+	.form-container,
+	.result-container {
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.textarea-container {
+		display: flex;
+		flex-direction: column;
+	}
 }
