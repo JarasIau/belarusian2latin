@@ -1,4 +1,6 @@
 belarusian2latin-cli.py - a CLI wrapper for the original script
 webui.py - WebUI wrapper for the original script
 
+This project is licensed under the MIT License, except for the file belarusian2latin/belarusian2latin.py, for which no license was provided, so it remains under full copyright of its author.
+
 Alphabet used: AaBbCcĆćČčDdEeFfGgHhIiJjKkLlĹĺMmNnŃńOoPpRrSsŚśŠšTtUuŬŭVvYyZzŽžŹź

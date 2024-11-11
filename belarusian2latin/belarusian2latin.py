@@ -21,19 +21,23 @@ def latinize(text):
     text = re.sub(r'[ьЬ]', r'¤', text)
     text = re.sub(r'Й', r'Й¤', text)
     text = re.sub(r'й', r'й¤', text)
-    text = re.sub(r'([СсЗзЦц])([бвджзлмнпрстфцчшБВДЖЗЛМНПРСТФЦЧШйЙ]¤)', r'\1¤\2', text)
+    text = re.sub(r'Д[Зз]', r'Ð', text)
+    text = re.sub(r'дз', r'ð', text)
+    text = re.sub(r'дð', r'ðð', text)
+    text = re.sub(r'Д[Ðð]', r'ÐÐ', text)
+    text = re.sub(r'([СсЗзЦц])([бвджзлмнпрстфцчшБВДЖЗЛМНПРСТФЦЧШÐðйЙ]¤)', r'\1¤\2', text)
     text = re.sub(r'([Нн])([Нн]¤)', r'\1¤\2', text)
     text = re.sub(r'([Лл])([Лл]¤)', r'\1¤\2', text)
-    text = re.sub(r'([СсЗзЦц])([бвджзлмнпрстфцчшБВДЖЗЛМНПРСТФЦЧШйЙ]¤)', r'\1¤\2', text)
+    text = re.sub(r'([СсЗзЦц])([бвджзлмнпрстфцчшБВДЖЗЛМНПРСТФЦЧШÐðйЙ]¤)', r'\1¤\2', text)
     text = re.sub(r'([Нн])([Нн]¤)', r'\1¤\2', text)
     text = re.sub(r'([Лл])([Лл]¤)', r'\1¤\2', text)
-    text = re.sub(r'([СсЗзЦц])([бвджзлмнпрстфцчшБВДЖЗЛМНПРСТФЦЧШйЙ]¤)', r'\1¤\2', text)
+    text = re.sub(r'([СсЗзЦц])([бвджзлмнпрстфцчшБВДЖЗЛМНПРСТФЦЧШÐðйЙ]¤)', r'\1¤\2', text)
     text = re.sub(r'([Нн])([Нн]¤)', r'\1¤\2', text)
     text = re.sub(r'([Лл])([Лл]¤)', r'\1¤\2', text)
-    text = re.sub(r'([СсЗзЦц])([бвджзлмнпрстфцчшБВДЖЗЛМНПРСТФЦЧШйЙ]¤)', r'\1¤\2', text)
-    text = re.sub(r'(?<=[бвгджзклмнпрстфхцчшБВГДЖЗКЛМНПРСТФХЦЧШйЙ])¤І', r'І', text)
-    text = re.sub(r'(?<=[бвгджзклмнпрстфхцчшБВГДЖЗКЛМНПРСТФХЦЧШйЙ])¤і', r'і', text)
-    palatalized_consonants = { 'л': 'ĺ', 'н': 'ń', 'с': 'ś', 'з': 'ź', 'ц': 'ć', }
+    text = re.sub(r'([СсЗзЦцÐð])([бвджзлмнпрстфцчшБВДЖЗЛМНПРСТФЦЧШÐðйЙ]¤)', r'\1¤\2', text)
+    text = re.sub(r'(?<=[бвгджзклмнпрстфхцчшБВГДЖЗКЛМНПРСТФХЦЧШÐðйЙ])¤І', r'І', text)
+    text = re.sub(r'(?<=[бвгджзклмнпрстфхцчшБВГДЖЗКЛМНПРСТФХЦЧШÐðйЙ])¤і', r'і', text)
+    palatalized_consonants = { 'л': 'ĺ', 'н': 'ń', 'с': 'ś', 'з': 'ź', 'ц': 'ć', 'ð': 'dź', }
     for cyrillic, latin in palatalized_consonants.items():
         text = re.sub(rf'{cyrillic}¤(?![аоэуыіАОЭУЫІ])', rf'{latin}', text)
         text = re.sub(rf'{cyrillic.upper()}¤(?![аоэуыіАОЭУЫІ])', rf'{latin.upper()}', text)
@@ -48,6 +52,7 @@ def latinize(text):
         'Ґ': 'G', 'Д': 'D', 'Ж': 'Ž', 'З': 'Z', 'І': 'I', 'Й': 'J', 'К': 'K', 'Л': 'L',
         'М': 'M', 'Н': 'N', 'О': 'O', 'П': 'P', 'Р': 'R', 'С': 'S', 'Т': 'T', 'У': 'U',
         'Ў': 'Ŭ', 'Ф': 'F', 'Х': 'Ch', 'Ц': 'C', 'Ч': 'Č', 'Ш': 'Š', 'Ы': 'Y', 'Э': 'E',
+        'ð': 'dz', 'Ð': 'Dz',
     }
     for cyrillic, latin in cyrillic_to_latin.items():
         text = text.replace(cyrillic, latin)
