@@ -1,4 +1,4 @@
-class Translater {
+class Converter {
 
     static async get(text) {
         const formData = new FormData();
