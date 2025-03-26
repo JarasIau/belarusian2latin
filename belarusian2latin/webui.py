@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/display", methods=["POST"])
 def display():
     content = request.form["input"]
-    output = belarusian2latin.latinize(content)
+    output = belarusian2latin.latinize(content, belarusian2latin.lookup_table)
     return {"output": output}
 
 @app.route("/", methods=["GET", "POST"])
