@@ -13,9 +13,11 @@ def main():
     args = get_args()
     if args.file:
         with open(args.file) as f:
-            print(belarusian2latin.latinize(f.read()))
+            text = f.read()
     else:
-        print(belarusian2latin.latinize(args.text))
+        text = args.text
+    latin = belarusian2latin.latinize(text, belarusian2latin.lookup_table)
+    print(latin)
 
 if __name__ == "__main__":
     main()
